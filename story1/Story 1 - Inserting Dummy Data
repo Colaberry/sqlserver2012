@@ -1,0 +1,138 @@
+Borrower Details
+The following query is used to insert dummy data into Borrower Details table.
+USE [OLTP1003]
+GO
+INSERT INTO [dbo].[Borrower_details]
+           ([SSN]
+           ,[Borrower FirstName]
+           ,[Borrower LastName]
+           ,[Borrower Email]
+           ,[Home Phone]
+           ,[Cell Phone]
+           ,[Marital Status]
+           ,[Date of Birth]
+           ,[Current Street Address]
+           ,[City]
+           ,[State]
+           ,[Zip]
+           ,[YearsAtThisAddress]
+           ,[Sex]
+           ,[Ethnicity]
+           ,[Race])
+     VALUES
+           (1, 'Sam', 'Anderson', 'sam@gmail.com', 65443627, 8743426963, 'Married', 2038-01-19, 'Suite 2', 'NY', 'NY', 600645, 5, 'Male', 'Hispanic', 'Hispanic')
+GO
+Change the values in the query to insert multiple rows of dummy data.
+
+------------------------------------------------------------------------------------------------------------------------- 
+Financial Details
+Use the following query to insert dummy data into the table.
+USE [OLTP1003]
+GO
+INSERT INTO [dbo].[Financial_details]
+           ([SSN]
+           ,[MonthlyIncome]
+           ,[Bonuses]
+           ,[Commission]
+           ,[OtherIncome]
+           ,[Rent or Own]
+           ,[Checking]
+           ,[Savings]
+           ,[RetirementFund]
+           ,[MutualFund])
+     VALUES
+           (<SSN, int,>
+           ,<MonthlyIncome, varchar(50),>
+           ,<Bonuses, varchar(50),>
+           ,<Commission, varchar(50),>
+           ,<OtherIncome, varchar(50),>
+           ,<Rent or Own, varchar(50),>
+           ,<Checking, int,>
+           ,<Savings, int,>
+           ,<RetirementFund, int,>
+           ,<MutualFund, int,>)
+GO
+Enter the values in the Values section of the query to insert data into the table. Make sure to use ‘ ’ (single quotes) when entering values of type VarChar. Below is the example of the query:
+USE [OLTP1003]
+GO
+INSERT INTO [dbo].[Financial_details]
+           ([SSN]
+           ,[MonthlyIncome])
+VALUES
+           (1, 1000)
+GO
+ 
+-------------------------------------------------------------------------------------------------------------------------
+Loan Details
+Use the following query to insert dummy data into the table.
+USE [OLTP1003]
+GO
+INSERT INTO [dbo].[Loan_details]
+           ([Loan_ID]
+           ,[SSN]
+           ,[Property_ID]
+           ,[Purpose of Loan]
+           ,[LoanAmount]
+           ,[Purchase Price]
+           ,[CreditCardAuthorization]
+           ,[Number of Units]
+           ,[Refferal]
+           ,[Co-Borrower SSN])
+     VALUES
+           (<Loan_ID, int,>
+           ,<SSN, int,>
+           ,<Property_ID, int,>
+           ,<Purpose of Loan, varchar(50),>
+           ,<LoanAmount, int,>
+           ,<Purchase Price, int,>
+           ,<CreditCardAuthorization, varchar(50),>
+           ,<Number of Units, int,>
+           ,<Refferal, varchar(50),>
+           ,<Co-Borrower SSN, int,>)
+GO
+Enter the values in the Values section of the query to insert data into the table. Make sure to use ‘ ’ (single quotes) when entering values of type VarChar. Below is the example of the query:
+USE [OLTP1003]
+GO
+INSERT INTO [dbo].[Loan_details]
+           ([Loan_ID]
+           ,[SSN])
+VALUES
+           (1021, 1234)
+GO
+ 
+-------------------------------------------------------------------------------------------------------------------------
+Property Details
+Use the following query to insert dummy data into the table.
+USE [OLTP1003]
+GO
+INSERT INTO [dbo].[Property_details]
+           ([Property_ID]
+           ,[SSN]
+           ,[Property Usage]
+           ,[Property City]
+           ,[Property State]
+           ,[Property Zip]
+           ,[RealEstateAgentName]
+           ,[RealEstateAgentPhone]
+           ,[RealEstateAgentEmail])
+     VALUES
+           (<Property_ID, int,>
+           ,<SSN, int,>
+           ,<Property Usage, varchar(50),>
+           ,<Property City, varchar(50),>
+           ,<Property State, varchar(50),>
+           ,<Property Zip, int,>
+           ,<RealEstateAgentName, varchar(50),>
+           ,<RealEstateAgentPhone, varchar(10),>
+           ,<RealEstateAgentEmail, varchar(50),>)
+GO
+Enter the values in the Values section of the query to insert data into the table. Make sure to use ‘ ’ (single quotes) when entering values of type VarChar. Below is the example of the query:
+USE [OLTP1003]
+GO
+INSERT INTO [dbo].[Property_details]
+           ([Property_ID]
+           ,[SSN]
+           ,[Property Usage])
+VALUES
+           (1021, 1234, ‘Own’)
+GO
