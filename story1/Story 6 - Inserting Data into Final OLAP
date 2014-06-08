@@ -1,0 +1,110 @@
+Use the following query to insert dummy data into the table.
+USE [OLTP1003]
+GO
+INSERT INTO [dbo].[Final OLAP]
+           ([SSN]
+           ,[Borrower FirstName]
+           ,[Borrower LastName]
+           ,[Borrower Email]
+           ,[Home Phone]
+           ,[Cell Phone]
+           ,[Marital Status]
+           ,[Date of Birth]
+           ,[Current Street Address]
+           ,[City]
+           ,[State]
+           ,[Zip]
+           ,[YearsAtThisAddress]
+           ,[Sex]
+           ,[Ethnicity]
+           ,[Race]
+           ,[MonthlyIncome]
+           ,[Bonuses]
+           ,[Commission]
+           ,[OtherIncome]
+           ,[Rent or Own]
+           ,[Checking]
+           ,[Savings]
+           ,[RetirementFund]
+           ,[MutualFund]
+           ,[Property City]
+           ,[Property State]
+           ,[Property Usage]
+           ,[Property Zip]
+           ,[Property_ID]
+           ,[RealEstateAgentEmail]
+           ,[RealEstateAgentName]
+           ,[RealEstateAgentPhone]
+           ,[Loan_ID]
+           ,[Purpose of Loan]
+           ,[LoanAmount]
+           ,[Purchase Price]
+           ,[CreditCardAuthorization]
+           ,[Number of Units]
+           ,[Refferal]
+           ,[Co-Borrower SSN]
+           ,[Copy of SSN]
+           ,[Copy of Borrower FirstName]
+           ,[Copy of Borrower LastName]
+           ,[Copy of Borrower Email]
+           ,[Copy of Home Phone]
+           ,[Copy of Cell Phone])
+     VALUES
+           (<SSN, int,>
+           ,<Borrower FirstName, varchar(50),>
+           ,<Borrower LastName, varchar(50),>
+           ,<Borrower Email, varchar(50),>
+           ,<Home Phone, varchar(50),>
+           ,<Cell Phone, varchar(50),>
+           ,<Marital Status, varchar(50),>
+           ,<Date of Birth, datetime,>
+           ,<Current Street Address, varchar(50),>
+           ,<City, varchar(50),>
+           ,<State, varchar(50),>
+           ,<Zip, varchar(50),>
+           ,<YearsAtThisAddress, int,>
+           ,<Sex, varchar(50),>
+           ,<Ethnicity, varchar(50),>
+           ,<Race, varchar(50),>
+           ,<MonthlyIncome, varchar(50),>
+           ,<Bonuses, varchar(50),>
+           ,<Commission, varchar(50),>
+           ,<OtherIncome, varchar(50),>
+           ,<Rent or Own, varchar(50),>
+           ,<Checking, int,>
+           ,<Savings, int,>
+           ,<RetirementFund, int,>
+           ,<MutualFund, int,>
+           ,<Property City, varchar(50),>
+           ,<Property State, varchar(50),>
+           ,<Property Usage, varchar(50),>
+           ,<Property Zip, int,>
+           ,<Property_ID, int,>
+           ,<RealEstateAgentEmail, varchar(50),>
+           ,<RealEstateAgentName, varchar(50),>
+           ,<RealEstateAgentPhone, varchar(10),>
+           ,<Loan_ID, int,>
+           ,<Purpose of Loan, varchar(50),>
+           ,<LoanAmount, int,>
+           ,<Purchase Price, int,>
+           ,<CreditCardAuthorization, varchar(50),>
+           ,<Number of Units, int,>
+           ,<Refferal, varchar(50),>
+           ,<Co-Borrower SSN, int,>
+           ,<Copy of SSN, int,>
+           ,<Copy of Borrower FirstName, varchar(50),>
+           ,<Copy of Borrower LastName, varchar(50),>
+           ,<Copy of Borrower Email, varchar(50),>
+           ,<Copy of Home Phone, varchar(50),>
+           ,<Copy of Cell Phone, varchar(50),>)
+GO
+
+Enter the values in the Values section of the query to insert data into the table. Make sure to use ‘ ’ (single quotes) when entering values of type VarChar. Below is the example of the query:
+USE [OLTP1003]
+GO
+INSERT INTO [dbo].[Final OLAP]
+           ([SSN]
+           ,[Borrower FirstName])
+VALUES
+           (1, ‘Mike’)
+GO
