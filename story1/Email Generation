@@ -1,0 +1,11 @@
+declare @SourceFileNamevarchar(250)
+declare @Body varchar(8000)
+declare @Subject varchar (100)
+
+set @SourceFileName =  ?
+set @Body=?
+set @Body = '"' + @SourceFileName + '" is not in the correct format.Please check for the errors' 
++ Char(13)+ Char(13)+
+@Bodya
+set @Subject =  ' Check for errors in the file.'
+select @Body as Body , @Subject as Subject
