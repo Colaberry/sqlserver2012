@@ -1,0 +1,236 @@
+public void Main()
+        {
+            // TODO: Add your code here
+            int error_count = 0;
+            string error_detail = "";
+            string excelFilePath = Dts.Variables["$Package::File_Name"].Value.ToString();
+            string strCn = "Provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source=" + excelFilePath + ";Excel 12.0;HDR=YES";
+            DataTable dtTables = new DataTable(); ;
+            System.Data.OleDb.OleDbConnection cn = new System.Data.OleDb.OleDbConnection(strCn);
+            cn.Open();
+            System.Data.OleDb.OleDbCommand command = new System.Data.OleDb.OleDbCommand();
+            command.Connection = cn;
+            command.CommandText = "SELECT * FROM [Sheet1$]";
+            System.Data.OleDb.OleDbDataAdapter adapter = new System.Data.OleDb.OleDbDataAdapter();
+            adapter.SelectCommand = command;
+            adapter.Fill(dtTables);
+            string str = string.Empty;
+            if (dtTables.Columns.Count != 44)
+            {
+                error_count += 1;
+                error_detail = "Mis-match in the columns count" + "\r\n";
+            }
+
+            if (!dtTables.Columns.Contains("SSN"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name SSN is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Borrower FirstName"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Borrower FirstName is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Borrower LastName"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Borrower LastName is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Borrower Email"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Email is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Home Phone"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Home Phone is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Cell Phone"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Cell Phone is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Marital Status"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Marital Status is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Date of Birth"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Date of Birth is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Current Street Address"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Current Street Address is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("City"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name City is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("State"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name State is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Zip"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Zip  is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("YearsAtThisAddress"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name YearsAtThisAddress is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("MonthlyIncome"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name MonthlyIncome is mis-spelled or not exists in the file. " + "\r\n";
+            }
+
+
+            if (!dtTables.Columns.Contains("Bonuses"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Bonuses is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Commission"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Commission is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("OtherIncome"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name OtherIncome is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Rent or Own"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Rent or Own is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Purpose of Loan"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Purpose of Loan is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Property Usage"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name  Property Usage is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("LoanAmount"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name LoanAmount is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Purchase Price"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Purchase Price is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Number of Units"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Number of Units is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Property City"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Property City is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Property State"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Property State is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Property Zip"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Property Zip is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Sex"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Sex is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Ethnicity"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Ethnicity is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Race"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Race is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("CreditCardAuthorization"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name CreditCardAuthorization is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Checking"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Checking is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Savings"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Savings is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("RetirementFund"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name RetirementFund is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("MutualFund"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name MutualFund is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Referral"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Referral is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("RealEstateAgentName"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name RealEstateAgentName is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("RealEstateAgentPhone"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name RealEstateAgentPhone is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("RealEstateAgentEmail"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name RealEstateAgentEmail is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Loan_ID"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Loan_ID is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Property_ID"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Property_ID is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            if (!dtTables.Columns.Contains("Co-Borrower SSN"))
+            {
+                error_count += 1;
+                error_detail = error_detail + " Column name Co-Borrower SSN is mis-spelled or not exists in the file. " + "\r\n";
+            }
+            Dts.Variables["User::ErrorsInSource"].Value = error_count;
+            Dts.Variables["User::Body"].Value = error_detail;
+            cn.Close();
+
+        }
+        // Dts.TaskResult = (int)ScriptResults.Success;
