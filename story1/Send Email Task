@@ -1,0 +1,14 @@
+DECLARE @recipients varchar(2000)
+DECLARE @filename varchar(200)
+DECLARE @subject varchar(2000)
+DECLARE @body  varchar(8000)
+
+SET @recipients = ISNULL(?, ' ')
+SET @subject = ISNULL(?, ' ')
+SET @body  = ISNULL(?, ' ')
+SET @filename = ISNULL(?, ' ')
+
+EXEC msdb.dbo.sp_send_dbmail
+@recipients=@recipients,
+@subject=@subject ,
+@body=@body
