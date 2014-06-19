@@ -1,3 +1,5 @@
+Note: Replace the code in Main() method and make sure that the auto generated code “Dts.TaskResult = (int)ScriptResults.Success;” is commented or removed.
+
 public void Main()
         {
             // TODO: Add your code here
