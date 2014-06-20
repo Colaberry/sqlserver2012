@@ -1,0 +1,9 @@
+CREATE VIEW [dbo].[Mortgage_view] AS
+SELECT a.*,
+b.MonthlyIncome,b.Bonuses,b.Commission,b.OtherIncome,b.[Rent or Own],b.Checking,b.Savings,b.RetirementFund,b.MutualFund,
+c.[Property City],c.[Property State],c.[Property Usage],c.[Property Zip],c.Property_ID,c.RealEstateAgentEmail,c.RealEstateAgentName,c.RealEstateAgentPhone,
+d.Loan_ID,d.[Purpose of Loan],d.LoanAmount,d.[Purchase Price],d.CreditCardAuthorization,d.[Number of Units],d.Refferal,d.[Co-Borrower SSN]
+FROM Borrower_staging a
+INNER JOIN Financial_staging b on a.ssn =b.ssn
+INNER JOIN Property_staging c on b.ssn=c.ssn
+INNER JOIN Loan_staging d on c.ssn=d.ssn
