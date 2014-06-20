@@ -4,7 +4,7 @@ CREATE TABLE [dbo].[Property_staging](
 [Property Usage] [varchar](50) NULL,
 [Property City] [varchar](50) NULL,
 [Property State] [varchar](50) NULL,
-[Property Zip] [int] NULL,
+[Property Zip] [varchar](50) NULL,
 [RealEstateAgentName] [varchar](50) NULL,
 [RealEstateAgentPhone] [varchar](50) NULL,
 [RealEstateAgentEmail] [varchar](50) NULL
